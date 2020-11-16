@@ -39,3 +39,18 @@ INSERT INTO quote(authorId, `text`) VALUES
 (7, 'Debugging is like being the detective in a crime movie where you are also the murderer.'),
 (8, 'An expert is a person who has made all the mistakes that can be made in a very narrow field.'),
 (9, 'Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.');
+
+CREATE TABLE account (
+  id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  firstName VARCHAR(255) NOT NULL,
+  lastName VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE transaction (
+  id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  accountId INT(11) UNSIGNED NOT NULL,
+  amount DECIMAL(19, 4),
+  PRIMARY KEY (id),
+  FOREIGN KEY (accountId) REFERENCES account(id)
+) ENGINE=InnoDB;
