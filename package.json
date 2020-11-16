@@ -13,7 +13,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "start": "tsc -w & nodemon -q -w dist dist/index.js",
+        "start": "tsc & nodemon -q -w dist dist/index.js",
         "lint": "eslint . --ext .ts",
         "test": "jest",
         "migrate": "knex migrate:latest",
